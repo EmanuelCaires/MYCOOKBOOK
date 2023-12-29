@@ -1,0 +1,13 @@
+<!-- templates/dashboard.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Recipe Dashboard</h1>
+<p>Total Recipes: {{ total_recipes }}</p>
+<h2>Recent Recipes</h2>
+<ul>
+    {% for recipe in recent_recipes %}
+    <li><a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">{{ recipe.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

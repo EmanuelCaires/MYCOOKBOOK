@@ -1,0 +1,66 @@
+/* app/static/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+.flash-messages {
+    list-style: none;
+    padding: 10px;
+}
+
+.flash-success {
+    color: green;
+}
+
+.flash-danger {
+    color: red;
+}
+
+.flash-info {
+    color: blue;
+}
+
+.flash-warning {
+    color: orange;
+}
+
+h1,
+h2,
+h3 {
+    color: #333;
+}
+
+
+
+
+

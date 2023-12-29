@@ -1,0 +1,19 @@
+<!-- templates/add_recipe.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Add New Recipe</h1>
+<form method="POST" action="{{ url_for('add_recipe') }}">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+    <label for="ingredients">Ingredients:</label>
+    <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
+    <label for="steps">Preparation Steps:</label>
+    <textarea id="steps" name="steps" rows="6" required></textarea>
+    <label for="tools">Required Tools:</label>
+    <input type="text" id="tools" name="tools" required>
+    <label for="cuisine">Cuisine:</label>
+    <input type="text" id="cuisine" name="cuisine" required>
+    <button type="submit">Add Recipe</button>
+</form>
+{% endblock %}
