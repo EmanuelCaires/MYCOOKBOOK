@@ -13,7 +13,8 @@ mongo = PyMongo(app)
 
 # Create 'users' collection if not exists
 with app.app_context():
-    if mongo and 'users' not in mongo.db.list_collection_names():
+    mongo.init_app(app)  # Ensure that the mongo object is properly initialized
+    if 'users' not in mongo.db.list_collection_names():
         users = mongo.db.users
         users.insert_one({'username': 'your_username', 'password': 'your_password'})
 
