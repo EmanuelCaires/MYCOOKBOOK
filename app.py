@@ -1,4 +1,4 @@
-# app/__init__.py
+# app/__init__.py# app/__init__.py
 import os
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
@@ -9,11 +9,11 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI", "mongodb+srv://emanuelcaires1@admin:emanuelcaires1@cluster0.wmcpp51.mongodb.net/myCookbookDB?retryWrites=true&w=majority")
 app.secret_key = os.environ.get("SECRET_KEY")
 
-mongo = PyMongo(app)
+mongo = PyMongo()
 
 # Create 'users' collection if not exists
 with app.app_context():
-    mongo.init_app(app)  # Ensure that the mongo object is properly initialized
+    mongo.init_app(app)
     if 'users' not in mongo.db.list_collection_names():
         users = mongo.db.users
         users.insert_one({'username': 'your_username', 'password': 'your_password'})
@@ -40,6 +40,7 @@ def logout():
     session.pop('user', None)
     flash('You have been logged out', 'info')
     return redirect(url_for('index'))
+
 
 
 
