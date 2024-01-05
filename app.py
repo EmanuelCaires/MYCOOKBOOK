@@ -1,29 +1,23 @@
-# app/__init__.py
 import os
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson import ObjectId
 from datetime import datetime
 from urllib.parse import quote_plus
-import pymongo.uri_parser
 
 app = Flask(__name__)
 
-# Rest of your code...
-
-
-app = Flask(__name__)
-
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+# Encode the username and password for MongoDB URI
 username = "emanuelcaires1"
 password = "emanuelcaires1"
-cluster_url = "cluster0.wmcpp51.mongodb.net"
-database_name = "myCookbookDB"
-parsed_uri = pymongo.uri_parser.parse_uri(os.environ.get("MONGO_URI", f"mongodb+srv://{username}:{password}@{cluster_url}/{database_name}?retryWrites=true&w=majority"))
-parsed_uri["username"] = quote_plus(parsed_uri["username"])
-parsed_uri["password"] = quote_plus(parsed_uri["password"])
-app.config["MONGO_URI"] = pymongo.uri_parser.unparse_uri(parsed_uri)
+encoded_username = quote_plus(username)
+encoded_password = quote_plus(password)
 
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get(
+    "MONGO_URI",
+    f"mongodb+srv://{encoded_username}:{encoded_password}@cluster0.wmcpp51.mongodb.net/myCookbookDB?retryWrites=true&w=majority",
+)
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
@@ -33,10 +27,6 @@ with app.app_context():
     if 'users' not in mongo.db.list_collection_names():
         users = mongo.db.users
         users.insert_one({'username': 'your_username', 'password': 'your_password'})
-
-# ...
-
-# Your routes go here...
 
 # ...
 
