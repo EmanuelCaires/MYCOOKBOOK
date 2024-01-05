@@ -8,7 +8,20 @@ from datetime import datetime
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI", "mongodb+srv://emanuelcaires1@admin:emanuelcaires1@cluster0.wmcpp51.mongodb.net/myCookbookDB?retryWrites=true&w=majority")
+from urllib.parse import quote_plus
+
+# ...
+
+# Update MONGO_URI
+username = "emanuelcaires1"
+password = "emanuelcaires1"
+cluster_url = "cluster0.wmcpp51.mongodb.net"
+database_name = "myCookbookDB"
+app.config["MONGO_URI"] = os.environ.get(
+    "MONGO_URI",
+    f"mongodb+srv://{quote_plus(username)}:{quote_plus(password)}@{cluster_url}/{database_name}?retryWrites=true&w=majority"
+)
+
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
