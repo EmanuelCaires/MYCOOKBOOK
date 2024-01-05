@@ -4,8 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_pymongo import PyMongo
 from bson import ObjectId
 from datetime import datetime
-if os.path.exists("env.py"):
-    import env
+
 
 app = Flask(__name__)
 
