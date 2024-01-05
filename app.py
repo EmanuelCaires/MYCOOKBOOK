@@ -1,5 +1,5 @@
 # app/__init__.py
-import os
+# app.py
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
 
@@ -39,7 +39,7 @@ def logout():
     session.pop('user', None)
     flash('You have been logged out', 'info')
     return redirect(url_for('index'))
-nfo')
+
     return redirect(url_for('index'))
 
 
