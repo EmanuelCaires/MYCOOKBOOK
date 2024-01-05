@@ -2,13 +2,17 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson import ObjectId
-
 from datetime import datetime
 from app.db import get_db
+if os.path.exists("env.py"):
+    import env
 
-app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb://your_username:your_password@localhost:27017/recipe_app'
-app.config['SECRET_KEY'] = 'your_secret_key'
+aapp = Flask(__name__)
+
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.secret_key = os.environ.get("SECRET_KEY")
+
 mongo = PyMongo(app)
 
 # Create 'users' collection if not exists
