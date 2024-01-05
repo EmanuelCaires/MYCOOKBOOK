@@ -4,10 +4,11 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_pymongo import PyMongo
 from bson import ObjectId
 from datetime import datetime
+
 if os.path.exists("env.py"):
     import env
 
-aapp = Flask(__name__)
+app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
@@ -43,6 +44,7 @@ def logout():
     session.pop('user', None)
     flash('You have been logged out', 'info')
     return redirect(url_for('index'))
+
 
 
 
