@@ -4,14 +4,13 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_pymongo import PyMongo
 from bson import ObjectId
 from datetime import datetime
-
 if os.path.exists("env.py"):
     import env
 
-app = Flask(__name__)
+aapp = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_URI", "mongodb+srv://emanuelcaires1:emanuelcaires1@cluster0.wmcpp51.mongodb.net/?myCookbookDB")
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI", "mongodb+srv://emanuelcaires1:emanuelcaires1@cluster0.wmcpp51.mongodb.net/?myCookbookDB")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
@@ -44,7 +43,6 @@ def logout():
     session.pop('user', None)
     flash('You have been logged out', 'info')
     return redirect(url_for('index'))
-
 
 
 
