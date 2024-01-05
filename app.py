@@ -1,10 +1,16 @@
 # app/__init__.py
+import os
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson import ObjectId
 from datetime import datetime
 from urllib.parse import quote_plus
 import pymongo.uri_parser
+
+app = Flask(__name__)
+
+# Rest of your code...
+
 
 app = Flask(__name__)
 
