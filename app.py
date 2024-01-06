@@ -13,28 +13,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-# Create 'users' collection if not exists
+# Ensure the connection to the MongoDB database
 with app.app_context():
-    if 'users' not in mongo.db.list_collection_names():
-        users = mongo.db.users
-        users.insert_one({'username': 'your_username', 'password': 'your_password'})
-
-# ...
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        users = mongo.db.users
-        username = request.form['username']
-        password = request.form['password']
-        user = users.find_one({'username': username, 'password': password})
-        if user:
-            session['user'] = username
-            flash('Login successful!', 'success')
-            return redirect(url_for('dashboard'))
-        else:
-            flash('Invalid username or password', 'danger')
-    return render_template('login.html')
+    try:
+        mongo.db.list_collection_names()
+    except Exception as e:
+        print(f"Error connecting to MongoDB: {str(e)}")
 
 # ...
 
