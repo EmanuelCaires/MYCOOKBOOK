@@ -20,7 +20,26 @@ with app.app_context():
     except Exception as e:
         print(f"Error connecting to MongoDB: {str(e)}")
 
-# ...
+# Routes for your templates
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/add_recipe')
+def add_recipe():
+    return render_template('add_recipe.html')
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/view_recipe')
+def view_recipe():
+    return render_template('view_recipe.html')
 
 if __name__ == '__main__':
     # Use the PORT environment variable if available, otherwise default to 5000
@@ -28,8 +47,3 @@ if __name__ == '__main__':
     
     # Bind to 0.0.0.0 to allow external connections
     app.run(debug=True, host='0.0.0.0', port=port)
-
-
-
-
-
