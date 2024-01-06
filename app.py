@@ -1,5 +1,5 @@
 # app/__init__.py
-import os  # Add this line to import the 'os' module
+import os
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson import ObjectId
@@ -36,11 +36,10 @@ def login():
             flash('Invalid username or password', 'danger')
     return render_template('login.html')
 
-@app.route('/logout')
-def logout():
-    session.pop('user', None)
-    flash('You have been logged out', 'info')
-    return redirect(url_for('index'))
+# ...
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 
