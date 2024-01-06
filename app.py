@@ -1,5 +1,5 @@
 # app/__init__.py
-from flask imimport os  # Add this line to import the 'os' module
+import os  # Add this line to import the 'os' module
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson import ObjectId
@@ -8,7 +8,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI", "mongodb+srv://emanuelcaires1:emanuelcaires1@cluster0.wmcpp51.mongodb.net/myCookbookDB?retryWrites=true&w=majority")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI", "mongodb+srv://emanuelcaires1@admin:emanuelcaires1@cluster0.wmcpp51.mongodb.net/myCookbookDB?retryWrites=true&w=majority")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
@@ -40,7 +40,8 @@ def login():
 def logout():
     session.pop('user', None)
     flash('You have been logged out', 'info')
-    return redirect(url_for('index.html'))
+    return redirect(url_for('index'))
+
 
 
 
