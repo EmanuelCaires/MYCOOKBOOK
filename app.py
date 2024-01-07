@@ -1,49 +1,59 @@
-# app/__init__.py
-import os
-from flask import Flask, render_template, request, redirect, url_for, session, flash
-from flask_pymongo import PyMongo
-from bson import ObjectId
-from datetime import datetime
+from flask import Flask, render_template, request, redirect, url_for, jsonify
+from pymongo import MongoClient
+import json
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI", "mongodb+srv://emanuelcaires1:emanuelcaires1@cluster0.wmcpp51.mongodb.net/myCookbookDB?retryWrites=true&w=majority")
-app.secret_key = os.environ.get("SECRET_KEY")
+client = MongoClient('mongodb://localhost:27017/')
+db = client['recipe_database']
+recipes = db['recipes']
 
-mongo = PyMongo(app)
-
-# Ensure the connection to the MongoDB database
-with app.app_context():
-    try:
-        mongo.db.list_collection_names()
-    except Exception as e:
-        print(f"Error connecting to MongoDB: {str(e)}")
-
-# Routes for your templates
+# Create necessary routes
 @app.route('/')
-def index():
-    return render_template('index.html')
+def home():
+    recipe_list = recipes.find()
+    return render_template('recipes.html', recipe_list=recipe_list)
 
-@app.route('/add_recipe')
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    # Add your login logic here
+    pass
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    # Add your register logic here
+    pass
+
+@app.route('/add_recipe', methods=['GET', 'POST'])
 def add_recipe():
+    if request.method == 'POST':
+        new_recipe = {
+            'title': request.form['title'],
+            'ingredients': request.form['ingredients'],
+            'directions': request.form['directions']
+        }
+        recipes.insert_one(new_recipe)
+        return redirect(url_for('home'))
     return render_template('add_recipe.html')
 
-@app.route('/dashboard')
-def dashboard():
-    return render_template('dashboard.html')
+@app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
+def edit_recipe(recipe_id):
+    if request.method == 'POST':
+        updated_recipe = {
+            'title': request.form['title'],
+            'ingredients': request.form['ingredients'],
+            'directions': request.form['directions']
+        }
+        recipes.update_one({'_id': ObjectId(recipe_id)}, {'$set': updated_recipe})
+        return redirect(url_for('home'))
+    recipe = recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('edit_recipe.html', recipe=recipe)
 
-@app.route('/login')
-def login():
-    return render_template('login.html')
-
-@app.route('/view_recipe')
-def view_recipe():
-    return render_template('view_recipe.html')
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    query = request.form['query']
+    recipe_list = recipes.find({'title': {'$regex': query, '$options': 'i'}})
+    return render_template('recipes.html', recipe_list=recipe_list)
 
 if __name__ == '__main__':
-    # Use the PORT environment variable if available, otherwise default to 5000
-    port = int(os.environ.get("PORT", 5000))
-    
-    # Bind to 0.0.0.0 to allow external connections
-    app.run(debug=True, host='0.0.0.0', port=port)
+    app.run(debug=True)
