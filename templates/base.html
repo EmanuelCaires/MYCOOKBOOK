@@ -11,11 +11,16 @@
     <h1>Welcome to our recipe platform!</h1>
     <p>Here you can find, add, and edit recipes.</p>
     <ul>
-        <li><a href="/add_recipe">Add a recipe</a></li>
-        <li><a href="/edit_recipe">Edit a recipe</a></li>
+        <li><a href="/add_recipe.html">Add a recipe</a></li>
+        <li><a href="/edit_recipe.html">Edit a recipe</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="/signup.html">Signup/a></li>
+
         {% block content %}
         {% endblock %}
     </ul>
 </body>
 
-</html>
+</html>@app.route("/")
+def home():
+    return render_template("home.html")

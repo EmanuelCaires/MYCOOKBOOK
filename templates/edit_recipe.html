@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Recipe</title>
-</head>
+{% extends 'base.html' %}
+
+{% block title %}
+Create Recipe
+{% endblock %}
+
+{% block content %}
 
 <body>
     <h1>Edit Recipe</h1>
@@ -15,3 +17,6 @@
         <br>
         <label for="description">Description:</label>
         <textarea id="description" name="description" rows="4" cols="50" required>
+    </form>        
+
+{% endblock %}
