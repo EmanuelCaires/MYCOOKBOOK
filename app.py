@@ -7,9 +7,12 @@ if os.path.exists("env.py"):
 app = Flask(__name__)
 
 
+
 @app.route("/")
-def hello():
-    return "Hello World ... again!"
+@app.route("/add_recipe")
+def get_recipes():
+    recipes= mongo.db.recipes.find()
+    return render_template("add_recipe.html", recipes=recipes)
 
 
 if __name__ == "__main__":
