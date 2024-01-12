@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/add_recipe")
 def get_recipes():
-    recipe= mongo.db.recipes.find()
+    recipe= mongo.db.recipe.find()
     return render_template("add_recipe.html", recipe=recipe)
 
 
