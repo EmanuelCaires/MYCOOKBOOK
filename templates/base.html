@@ -5,20 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MYCOOKBOOK</title>
+    <ul>
+ 
 </head>
 
 <body>
-    <h1>Welcome to our recipe platform!</h1>
-    <p>Here you can find, add, and edit recipes.</p>
-    <ul>
-        <li><a href="/add_recipe.html">Add a recipe</a></li>
-        <li><a href="/edit_recipe.html">Edit a recipe</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="/signup.html">Signup/a></li>
 
         {% block content %}
+        {{ recipe_name }}
+        {{ recipe_description }}
+        {{ recipe_ingredients }}
+
+
         {% endblock %}
-    </ul>
 </body>
 
 </html>
