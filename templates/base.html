@@ -5,19 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MYCOOKBOOK</title>
-    <ul>
- 
 </head>
-
 <body>
-
-        {% block content %}
-        {{ recipe_name }}
-        {{ recipe_description }}
-        {{ recipe_ingredients }}
-
-
-        {% endblock %}
+        {% for recipes in recipes %}
+        {{ recipes.recipe_name }}
+        {% endfor %}
 </body>
-
 </html>
