@@ -1,9 +1,26 @@
-{% extends "base.html" %}
+        {% extends "base.html" %}
+        {% block content %}
 
-{% block content %}
+                {% for recipes in recipes %}
+                        {{ recipes.recipe_name }}
+                {% endfor %}
 
-        {% for recipes in recipes %}
-        {{ recipes.recipe_name }}
-        {% endfor %}
+                <ul class="collapsible">
+                        <li>
+                                <div class="collapsible-header black-text brown lighten-4 text-shadow"><i
+                                                class="fas fa-caret-down"></i>First</div>
+                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                        <li>
+                                <div class="collapsible-header black-text brown lighten-4 text-shadow"><i
+                                                class="fas fa-caret-down"></i>Second</div>
+                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                        <li>
+                                <div class="collapsible-header black-text brown lighten-4text-shadow"><i
+                                                class="fas fa-caret-down"></i>Third</div>
+                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                </ul>
 
- {% endblock %}       
+        {% endblock %}
