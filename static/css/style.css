@@ -18,10 +18,22 @@ body {
 
 }
 
+nav ul a {
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    color: #000000;
+    display: block;
+    padding: 0 15px;
+    cursor: pointer;
+}
 
 
 .card-panel {
 background: linear-gradient(0,rgba(223, 222, 220, 0.1),rgb(196, 195, 194));
 }
 
+.btn-large{
+background-color: #e3f2fd;
 
+}
