@@ -1,26 +1,26 @@
         {% extends "base.html" %}
         {% block content %}
+<!DOCTYPE html>
+<html lang="en">
 
-                {% for recipes in recipes %}
-                        {{ recipes.recipe_name }}
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recipe List</title>
+</head>
+
+<body>
+        <h1>Recipes</h1>
+        <ul>
+                {% for recipe in recipes %}
+                <li>{{ recipe.name }}</li>
+                <p>{{ recipe.description }}</p>
+                <p>{{ recipe.ingredients | join(', ') }}</p>
                 {% endfor %}
+        </ul>
+        <a href="{{ url_for('add_recipe') }}">Add New Recipe</a>
+</body>
 
-                <ul class="collapsible">
-                        <li>
-                                <div class="collapsible-header black-text brown lighten-4 text-shadow"><i
-                                                class="fas fa-caret-down"></i>First</div>
-                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                        <li>
-                                <div class="collapsible-header black-text brown lighten-4 text-shadow"><i
-                                                class="fas fa-caret-down"></i>Second</div>
-                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                        <li>
-                                <div class="collapsible-header black-text brown lighten-4text-shadow"><i
-                                                class="fas fa-caret-down"></i>Third</div>
-                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                </ul>
+</html>
 
         {% endblock %}
