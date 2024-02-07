@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900 &display=swap');
 
 
-
 body {
     min-height: 100%;
     position: fixed;
@@ -30,10 +29,20 @@ nav ul a {
 
 
 .card-panel {
-background: linear-gradient(0,rgba(223, 222, 220, 0.1),rgb(196, 195, 194));
+    background: linear-gradient(0,rgba(255, 255, 255, 0.1),rgb(255, 255, 252));
 }
 
-.btn-large{
-background-color: #e3f2fd;
+.btn-large {
+    background-color: #e3f2fd;
 
 }
+
+.input-field > label {
+    color: #080808;
+}
+
+.scrollable {
+    max-height: 500px; /* Set the maximum height for the container */
+    overflow-y: auto; /* Add vertical scroll if content overflows */
+}
+

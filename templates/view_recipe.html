@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="center-align">{{ recipe.recipe_name }}</h3>
+
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            <p><strong>Description:</strong> {{ recipe.description }}</p>
+            <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+            <p><strong>Cooking Instructions:</strong> {{ recipe.cooking_instructions }}</p>
+            <p><strong>Preparation Time:</strong> {{ recipe.preparation_time }}</p>
+            <p><strong>Serving Size:</strong> {{ recipe.serving_size }}</p>
+        </div>
+        <div class="card-action">
+            <form action="/view_recipe/{{ recipe._id }}" method="post">
+                <button class="btn waves-effect waves-light" type="submit" name="action" value="edit">Edit</button>
+                <button class="btn waves-effect waves-light" type="submit" name="action" value="delete">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

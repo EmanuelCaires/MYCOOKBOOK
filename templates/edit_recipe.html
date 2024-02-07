@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h3 class="center-align">Edit Recipe</h3>
+
+    <form action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" method="POST">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="recipe_name" type="text" class="validate" name="recipe_name"
+                    value="{{ recipe.recipe_name }}">
+                <label for="recipe_name">Recipe Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="ingredients" class="materialize-textarea"
+                    name="ingredients">{{ recipe.ingredients }}</textarea>
+                <label for="ingredients">Ingredients</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="description" class="materialize-textarea"
+                    name="description">{{ recipe.description }}</textarea>
+                <label for="description">Description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="cooking_instructions" class="materialize-textarea"
+                    name="cooking_instructions">{{ recipe.cooking_instructions }}</textarea>
+                <label for="cooking_instructions">Cooking Instructions</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m6">
+                <input id="preparation_time" type="text" class="validate" name="preparation_time"
+                    value="{{ recipe.preparation_time }}">
+                <label for="preparation_time">Preparation Time</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <input id="serving_size" type="text" class="validate" name="serving_size"
+                    value="{{ recipe.serving_size }}">
+                <label for="serving_size">Serving Size</label>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Update Recipe
+        </button>
+    </form>
+</div>
+
+{% endblock %}

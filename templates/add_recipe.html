@@ -1,13 +1,53 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Add Recipe</h1>
-    <form method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description"><br><br>
-        <label for="ingredients">Ingredients (Comma separated):</label>
-        <input type="text" id="ingredients" name="ingredients"><br><br>
-        <button type="submit">Add Recipe</button>
-    </form>
-{%endblock%}
+    <h3 class="center-align">New Recipe</h3>
+
+<div class="container scrollable">
+    <div class="card-panel">
+        <form action="/add_recipe" method="post">
+            <div class="row">
+                <div class="input-field col s6 text-darker">
+                    <input id="recipe_name" type="text" class="validate" name="recipe_name">
+                    <label for="recipe_name">Recipe Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 text-darker">
+                    <textarea id="ingredients" class="materialize-textarea" name="ingredients"></textarea>
+                    <label for="ingredients">Ingredients</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 text-darker">
+                    <textarea id="description" class="materialize-textarea" name="description"></textarea>
+                    <label for="description">Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 text-darker">
+                    <textarea id="cooking_instructions" class="materialize-textarea"
+                        name="cooking_instructions"></textarea>
+                    <label for="cooking_instructions">Cooking Instructions</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 text-darker">
+                    <input id="preparation_time" type="text" class="validate" name="preparation_time">
+                    <label for="preparation_time">Preparation Time</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 text-darker">
+                    <input id="serving_size" type="text" class="validate" name="serving_size">
+                    <label for="serving_size">Serving Size</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
