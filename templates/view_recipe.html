@@ -1,22 +1,33 @@
 {% extends 'base.html' %}
+
 {% block content %}
+<!-- Display details of a specific recipe -->
 <h3 class="center-align">{{ recipe.recipe_name }}</h3>
 
 <div class="container">
     <div class="card">
         <div class="card-content">
+            <!-- Display description of the recipe -->
             <p><strong>Description:</strong> {{ recipe.description }}</p>
+            <!-- Display ingredients of the recipe -->
             <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+            <!-- Display cooking instructions of the recipe -->
             <p><strong>Cooking Instructions:</strong> {{ recipe.cooking_instructions }}</p>
+            <!-- Display preparation time of the recipe -->
             <p><strong>Preparation Time:</strong> {{ recipe.preparation_time }}</p>
+            <!-- Display serving size of the recipe -->
             <p><strong>Serving Size:</strong> {{ recipe.serving_size }}</p>
         </div>
         <div class="card-action">
+            <!-- Form for editing or deleting the recipe -->
             <form action="/view_recipe/{{ recipe._id }}" method="post">
+                <!-- Button to edit the recipe -->
                 <button class="btn waves-effect waves-light" type="submit" name="action" value="edit">Edit</button>
+                <!-- Button to delete the recipe -->
                 <button class="btn waves-effect waves-light" type="submit" name="action" value="delete">Delete</button>
             </form>
         </div>
     </div>
 </div>
+
 {% endblock %}

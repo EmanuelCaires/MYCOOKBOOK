@@ -158,15 +158,27 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", recipe=recipe)
 
 
-@app.route("/view_recipe/<recipe_id>")
+@app.route("/view_recipe/<recipe_id>", methods=["GET", "POST"])
 def view_recipe(recipe_id):
     # Retrieve the recipe details from the database
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    if recipe:
-        return render_template("view_recipe.html", recipe=recipe)
-    else:
+    if not recipe:
         flash("Recipe not found")
         return redirect(url_for("profile", username=session["user"]))
+    
+    if request.method == "POST":
+        # Handle delete request
+        if request.form.get("action") == "delete":
+            mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+            flash("Recipe deleted successfully!")
+            return redirect(url_for("profile", username=session["user"]))
+        # Handle edit request
+        elif request.form.get("action") == "edit":
+            return redirect(url_for("edit_recipe", recipe_id=recipe_id))
+    
+    return render_template("view_recipe.html", recipe=recipe)
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -1,6 +1,7 @@
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900 &display=swap');
 
-
+/* Body styles */
 body {
     min-height: 100%;
     position: fixed;
@@ -14,9 +15,9 @@ body {
     margin-bottom: 100px;
     font-family: Poppins;
     box-sizing: inherit;
-
 }
 
+/* Navigation links styles */
 nav ul a {
     -webkit-transition: background-color 0.3s;
     transition: background-color 0.3s;
@@ -27,22 +28,30 @@ nav ul a {
     cursor: pointer;
 }
 
-
+/* Card panel styles */
 .card-panel {
-    background: linear-gradient(0,rgba(255, 255, 255, 0.1),rgb(255, 255, 252));
+    background: linear-gradient(0, rgba(168, 152, 137, 0.1), rgb(255, 255, 252));
 }
 
+/* Large button styles */
 .btn-large {
     background-color: #e3f2fd;
-
 }
 
+/* Input field label styles */
 .input-field > label {
     color: #080808;
 }
 
+/* Scrollable container styles */
 .scrollable {
-    max-height: 500px; /* Set the maximum height for the container */
-    overflow-y: auto; /* Add vertical scroll if content overflows */
+    overflow-y: auto;
+    max-height: 70vh; /* Set maximum height */
 }
+
+/* Hide scrollbar */
+.scrollable::-webkit-scrollbar {
+    display: none;
+}
+
 

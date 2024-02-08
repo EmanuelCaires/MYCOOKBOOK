@@ -1,29 +1,36 @@
 {% extends 'base.html' %}
+
 {% block content %}
-    <h3 class="center-align">New Recipe</h3>
+<!-- Form for adding a new recipe -->
+<h3 class="center-align">New Recipe</h3>
 
 <div class="container scrollable">
     <div class="card-panel">
+        <!-- Submission form for new recipe -->
         <form action="/add_recipe" method="post">
             <div class="row">
+                <!-- Input field for recipe name -->
                 <div class="input-field col s6 text-darker">
                     <input id="recipe_name" type="text" class="validate" name="recipe_name">
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
             <div class="row">
+                <!-- Input field for ingredients -->
                 <div class="input-field col s6 text-darker">
                     <textarea id="ingredients" class="materialize-textarea" name="ingredients"></textarea>
                     <label for="ingredients">Ingredients</label>
                 </div>
             </div>
             <div class="row">
+                <!-- Input field for description -->
                 <div class="input-field col s6 text-darker">
                     <textarea id="description" class="materialize-textarea" name="description"></textarea>
                     <label for="description">Description</label>
                 </div>
             </div>
             <div class="row">
+                <!-- Input field for cooking instructions -->
                 <div class="input-field col s6 text-darker">
                     <textarea id="cooking_instructions" class="materialize-textarea"
                         name="cooking_instructions"></textarea>
@@ -31,20 +38,23 @@
                 </div>
             </div>
             <div class="row">
+                <!-- Input field for preparation time -->
                 <div class="input-field col s6 text-darker">
                     <input id="preparation_time" type="text" class="validate" name="preparation_time">
                     <label for="preparation_time">Preparation Time</label>
                 </div>
             </div>
             <div class="row">
+                <!-- Input field for serving size -->
                 <div class="input-field col s6 text-darker">
                     <input id="serving_size" type="text" class="validate" name="serving_size">
                     <label for="serving_size">Serving Size</label>
                 </div>
             </div>
             <div class="row">
+                <!-- Button to submit the form -->
                 <div class="input-field col s6">
-                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <button class="btn waves-effect waves-light" type="submit">Add Recipe</button>
                 </div>
             </div>
         </form>
