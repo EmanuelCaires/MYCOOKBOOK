@@ -30,7 +30,7 @@ nav ul a {
 
 /* Card panel styles */
 .card-panel {
-    background: linear-gradient(0, rgba(168, 152, 137, 0.1), rgb(255, 255, 252));
+    background: linear-gradient(0, #a8988a1a, rgb(255, 255, 252));
 }
 
 /* Large button styles */
@@ -53,5 +53,3 @@ nav ul a {
 .scrollable::-webkit-scrollbar {
     display: none;
 }
-
-
