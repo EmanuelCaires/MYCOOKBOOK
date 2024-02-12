@@ -73,6 +73,11 @@ My Cookbook is a web-based platform designed to help users organize and manage t
 ## Wireframes
 - Wireframes were created using Balsamic for desktop, mobile, and tablet views to ensure a consistent user experience across different devices.
 
+![](static/wireframes/desktop-wireframe.jpg)
+
+![](static/wireframes/mobile-wireframe.jpg)
+  
+
 ## Features
 
 ### Existing Features
