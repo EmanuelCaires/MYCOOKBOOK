@@ -19,7 +19,7 @@ body {
 
 /* Navigation links styles */
 nav ul a {
-    -webkit-transition: background-color 0.3s;
+ 
     transition: background-color 0.3s;
     font-size: 1rem;
     color: #000000;
