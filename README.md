@@ -2,8 +2,7 @@
 
 ## Description
 
-My Cookbook is a web-based platform designed to help users organize and manage their recipes effectively. With My Cookbook, users can register, log in, and add their favorite recipes to their personal collection. Whether you're a culinary enthusiast or a casual home cook, My Cookbook provides a convenient way to store and access your recipes anytime, anywhere.
-
+Welcome to My Cookbook! This platform is meticulously crafted to offer users a seamless experience in managing their culinary creations. From storing cherished family recipes to sharing culinary innovations with the world, My Cookbook empowers users to curate their personal cookbook with ease.
 ![](static/wireframes/mycookbook.png)
 
 ## Table of Contents
@@ -32,16 +31,14 @@ My Cookbook is a web-based platform designed to help users organize and manage t
 ## UX
 
 ### User Goals
-- Add Recipes: Users can add new recipes to their collection.
-- Edit Recipes: Users can edit existing recipes.
-- Delete Recipes: Users can delete recipes they no longer need.
-- Search Recipes: Users can search for specific recipes.
-- Organize Recipes: Users can categorize recipes for easy access.
-
+- Efficiency: Streamline the process of storing and accessing recipes.
+- Organization: Maintain a well-structured collection of recipes.
+- Accessibility: Access recipes anytime, anywhere with an internet connection.
+  
 ### User Stories
-- As a cooking enthusiast, I want to organize my recipes in one place.
-- As a busy parent, I want to quickly access my favorite recipes while cooking.
-- As a chef, I want to share my recipes with others in an organized manner.
+- Home Cook: "I want a convenient way to organize and access my favorite recipes, so I can spend more time enjoying my culinary creations."
+- Busy Parent: "I need a platform that allows me to quickly find and prepare family-friendly recipes amidst my hectic schedule."
+- Chef: "I aim to share my culinary expertise with others in an organized and professional manner, showcasing my unique recipes to a broader audience."
 
 ### Site Owners Goals
 - Provide a user-friendly interface for recipe management.
@@ -80,6 +77,12 @@ My Cookbook is a web-based platform designed to help users organize and manage t
 
 ## Features
 
+- Recipe Management: Add, edit, and delete recipes effortlessly.
+- Search Functionality: Quickly find specific recipes using the search feature.
+- Categorization: Organize recipes into custom categories for easy browsing.
+- User Authentication: Securely register and log in to access your personalized cookbook.
+- Responsive Design: Enjoy a consistent experience across various devices.
+
 ### Existing Features
 
 #### Landing Page
@@ -93,23 +96,23 @@ My Cookbook is a web-based platform designed to help users organize and manage t
 
 ## Deployment
 - The repository was deployed to Heroku for hosting and accessibility.
+- Now the website is now live on https://emanuelcaires.github.io/mycookbook/
+
 - Changes can be made and deployed by following simple steps outlined in the README.
 
 ## Tech Stacks
 
 ### Languages
-- HTML
-- CSS
-- Python
-- Flask
-- MongoDB
+- Frontend: HTML, CSS
+- Backend: Python, Flask
+- Database: MongoDB
 
 ### Tools
 - Gitpod: Integrated development environment for coding.
 - Balsamic: Wireframing tool for designing user interfaces.
 - W3C HTML Validation Service: Validates HTML code for compliance.
 - W3C CSS Validation Service: Validates CSS code for compliance.
-- materializecss: Front-end and back-end framework for responsive design.
+- materialize css: Front-end and back-end framework for responsive design.
 - Google Fonts: Provides a wide range of fonts for typography.
 
 ## Credits
