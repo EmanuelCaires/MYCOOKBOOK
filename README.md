@@ -85,6 +85,58 @@ Welcome to My Cookbook! This platform is meticulously crafted to offer users a s
 
 ### Existing Features
 
+### Navigation Bar
+
++ The navigation bar is fully responsive to allow for various screen sizes. It includes links to manoeuvre around the site easily and the Gym logo which doubles as a link back to the home screen.
+
+![](Wireframes/NavBar.png)
+
++ Small devices (<992px)
+
++ As the navigation bar would be unuseable in the desktop version on smaller devices, it takes on a hamburger style.
+
+![](Wireframes/SmallDevice.png)
+
+![](Wireframes/SmallDeviceMenu.png)
+
+### Landing Page
+
++ The landing page image gives the user instant knowledge of what is involved in the Gym amd a good motivation to scroll down to find out more.
+
+![](Wireframes/LandingPage.png)
+
+### About Section
+
++ The about section gives a description of the type of classes, membership prices and some offers that will find at the Gym.
++ It is also responsive to suit the different screen sizes.
+ 
+![](Wireframes/About.png)
+
+### Classes Section
+
++ The classes section gives am idea about the type of classesexiste at the Gym  and a dropdown buttom, when pressed  open up with small descripition of class.
+
+![](Wireframes/Classes.png)
+
+### Gallery Section
+
++ The gallery section show a slideshow of pictures of the Gym.
+
+![](Wireframes/Gallery.png)
+
+### Contact Section
+
++ The contact section allows the user to quickly send a message to the Gym.
+
+![](Wireframes/Contact.png)
+
+### Footer Section
+
++ The footer contains the social media links related to Gym.
++ These social links all open in a new tab for ease of use to the user and also, so the user has an ability to easily come back to Gym's site.
+ 
+![](Wireframes/Footer.png)
+
 #### Landing Page
 - Provides an overview of the platform's features.
 - Displays images representing various devices to emphasize accessibility.
@@ -96,7 +148,7 @@ Welcome to My Cookbook! This platform is meticulously crafted to offer users a s
 
 ## Deployment
 - The repository was deployed to Heroku for hosting and accessibility.
-- Now the website is now live on https://emanuelcaires.github.io/mycookbook/
+- Now the website is now live on [(https://mycookbook-dfb04675e4fd.herokuapp.com/)]
 
 - Changes can be made and deployed by following simple steps outlined in the README.
 
@@ -112,7 +164,7 @@ Welcome to My Cookbook! This platform is meticulously crafted to offer users a s
 - Balsamic: Wireframing tool for designing user interfaces.
 - W3C HTML Validation Service: Validates HTML code for compliance.
 - W3C CSS Validation Service: Validates CSS code for compliance.
-- materialize css: Front-end and back-end framework for responsive design.
+- Materialize CSS: Front-end and back-end framework for responsive design.
 - Google Fonts: Provides a wide range of fonts for typography.
 
 ## Credits
