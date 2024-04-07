@@ -36,7 +36,7 @@ Welcome to My Cookbook! This platform is meticulously crafted to offer users a s
 - Accessibility: Access recipes anytime, anywhere with an internet connection.
   
 ### User Stories
-- Home Cook: "I want a convenient way to organize and access my favorite recipes, so I can spend more time enjoying my culinary creations."
+- Home Cook: "I want a convenient way to organize and access my favourite recipes, so I can spend more time enjoying my culinary creations."
 - Busy Parent: "I need a platform that allows me to quickly find and prepare family-friendly recipes amidst my hectic schedule."
 - Chef: "I aim to share my culinary expertise with others in an organized and professional manner, showcasing my unique recipes to a broader audience."
 
@@ -87,59 +87,36 @@ Welcome to My Cookbook! This platform is meticulously crafted to offer users a s
 
 ### Navigation Bar
 
-+ The navigation bar is fully responsive to allow for various screen sizes. It includes links to manoeuvre around the site easily and the Gym logo which doubles as a link back to the home screen.
++ The navigation bar is fully responsive to allow for various screen sizes. It includes links to manoeuvre around the site easily and the recipe book  logo which doubles as a link back to the home screen.
 
-![](Wireframes/NavBar.png)
+![](static/wireframes/navbar.jpg)
 
 + Small devices (<992px)
 
-+ As the navigation bar would be unuseable in the desktop version on smaller devices, it takes on a hamburger style.
++ As the navigation bar would be unusable in the desktop version on smaller devices, it takes on a hamburger style.
 
-![](Wireframes/SmallDevice.png)
+![](static/wireframes/small_devices.jpg)
 
-![](Wireframes/SmallDeviceMenu.png)
 
-### Landing Page
+### Login
 
-+ The landing page image gives the user instant knowledge of what is involved in the Gym amd a good motivation to scroll down to find out more.
++ The login page gives the existing user the possibility to login to their recipe book.
+![](static/wireframes/login.jpg)
 
-![](Wireframes/LandingPage.png)
+### Register
 
-### About Section
++ The register page gives the possibility to the new user to register and start using the mycookbook to add, delete or edit their recipes. 
+![](static/wireframes/register.jpg)
 
-+ The about section gives a description of the type of classes, membership prices and some offers that will find at the Gym.
-+ It is also responsive to suit the different screen sizes.
- 
-![](Wireframes/About.png)
+### Your Recipes
 
-### Classes Section
++ The section permits the user to view the recipes added previously and make any changes to them.
+![](static/wireframes/your_recipes.jpg)
 
-+ The classes section gives am idea about the type of classesexiste at the Gym  and a dropdown buttom, when pressed  open up with small descripition of class.
+### New Recipe
 
-![](Wireframes/Classes.png)
-
-### Gallery Section
-
-+ The gallery section show a slideshow of pictures of the Gym.
-
-![](Wireframes/Gallery.png)
-
-### Contact Section
-
-+ The contact section allows the user to quickly send a message to the Gym.
-
-![](Wireframes/Contact.png)
-
-### Footer Section
-
-+ The footer contains the social media links related to Gym.
-+ These social links all open in a new tab for ease of use to the user and also, so the user has an ability to easily come back to Gym's site.
- 
-![](Wireframes/Footer.png)
-
-#### Landing Page
-- Provides an overview of the platform's features.
-- Displays images representing various devices to emphasize accessibility.
++ The section permits the user to add new recipes to their cookbook recipes.
+![](static/wireframes/new_recipes.jpg)
 
 #### Testing
 - Ensures the platform meets the expected goals and requirements.
