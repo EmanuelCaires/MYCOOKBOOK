@@ -20,7 +20,12 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/login")
 def home():
-    return render_template("login.html")
+    if "user" in session:
+        # If user is logged in, redirect to profile page
+        return redirect(url_for("profile", username=session["user"]))
+    else:
+        # If user is not logged in, render the login page
+        return render_template("login.html")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -175,11 +180,11 @@ def view_recipe(recipe_id):
     return render_template("view_recipe.html", recipe=recipe)
 
 
-
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-            
+
+
 
 
