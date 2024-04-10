@@ -13,13 +13,12 @@ body {
     background-attachment: fixed;
     background-size: cover;
     margin-bottom: 100px;
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font family */
     box-sizing: inherit;
 }
 
 /* Navigation links styles */
 nav ul a {
- 
     transition: background-color 0.3s;
     font-size: 1rem;
     color: #000000;
@@ -53,3 +52,4 @@ nav ul a {
 .scrollable::-webkit-scrollbar {
     display: none;
 }
+
