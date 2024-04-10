@@ -53,3 +53,10 @@ nav ul a {
     display: none;
 }
 
+/* Override letter-spacing in Materialize CSS */
+.table-of-contents a {
+    letter-spacing: 0; /* Override the problematic value */
+}
+
+
+
