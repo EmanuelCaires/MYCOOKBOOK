@@ -60,7 +60,7 @@
         </ul>
     </header>
 
-    <section>
+    <div>
         <!-- Flash messages -->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -71,14 +71,11 @@
         {% endfor %}
         {% endif %}
         {% endwith %}
-    </section>
+    </div>
 
     <main class="container">
-        <section>
-            <h1>Main Content</h1>
-            {% block content %}
-            {% endblock %}
-        </section>
+        {% block content %}
+        {% endblock %}
     </main>
 
     <!-- JavaScript dependencies -->
