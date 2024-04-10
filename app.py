@@ -20,10 +20,6 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/login")
 def home():
-    # Check if user is logged in
-    if "user" in session:
-        session.pop("user")  # Logout the user if logged in
-
     return render_template("login.html")
 
 @app.route("/register", methods=["GET", "POST"])
@@ -184,5 +180,6 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+            
 
 
