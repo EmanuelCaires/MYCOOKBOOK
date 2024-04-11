@@ -1,3 +1,8 @@
+/* Override Materialize CSS */
+.table-of-contents a {
+    letter-spacing: normal !important; /* Remove letter spacing */
+}
+
 /* Body styles */
 body {
     min-height: 100%;
