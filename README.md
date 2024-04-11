@@ -122,6 +122,26 @@ Welcome to My Cookbook! This platform is meticulously crafted to offer users a s
 - Validates HTML and CSS for correctness and compliance.
 - Uses Lighthouse for performance testing on desktop and mobile devices.
 
+- 
+# Testing
+
+### Lighthouse testing 
+
+![](Wireframes//LIGHTHOUSE.png)
+
+
+### W3C VALIDATION
+
+![](Wireframes//htmlvalidator.png)
+
+- During the validation of CSS I encountered an error on the materialize cdn itself self giving an error.
+![](Wireframes//CSSVALIDATOR.png)
+
+### Database
+
+![](Wireframes///databasediagram.png)
+
+
 ## Deployment
 - The repository was deployed to Heroku for hosting and accessibility.
 - Now the website is now live on [(https://mycookbook-dfb04675e4fd.herokuapp.com/)]
