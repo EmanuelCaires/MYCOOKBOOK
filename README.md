@@ -127,19 +127,19 @@ Welcome to My Cookbook! This platform is meticulously crafted to offer users a s
 
 ### Lighthouse testing 
 
-![](Wireframes//LIGHTHOUSE.png)
+![](static/wireframes//LIGHTHOUSE.png)
 
 
 ### W3C VALIDATION
 
-![](Wireframes//htmlvalidator.png)
+![](static/wireframes//htmlvalidator.png)
 
-- During the validation of CSS I encountered an error on the materialize cdn itself self giving an error.
-![](Wireframes//CSSVALIDATOR.png)
+- During the validation of CSS I encountered an error on the materialize CDN itself self popping an error not being able to change.
+![](static/wireframes//CSSVALIDATOR.png)
 
 ### Database
 
-![](Wireframes///databasediagram.png)
+![](static/wireframes///databasediagram.png)
 
 
 ## Deployment
