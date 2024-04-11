@@ -33,7 +33,7 @@ nav ul a {
 
 /* Card panel styles */
 .card-panel {
-    background: linear-gradient(0, #a8988a1a, rgb(255, 255, 252));
+    background: linear-gradient(#a8988a1a, rgb(255, 255, 252));
 }
 
 /* Large button styles */
