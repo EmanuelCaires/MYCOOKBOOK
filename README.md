@@ -118,11 +118,7 @@ Welcome to My Cookbook! This platform is meticulously crafted to offer users a s
 ![](static/wireframes/new_recipes.jpg)
 
 #### Testing
-- Ensures the platform meets the expected goals and requirements.
-- Validates HTML and CSS for correctness and compliance.
-- Uses Lighthouse for performance testing on desktop and mobile devices.
 
-- 
 # Testing
 
 ### Lighthouse testing 
